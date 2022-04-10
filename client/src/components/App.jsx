@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Header, Users } from '../layout/index';
+import { Header, Users, Form } from '../layout/index';
 import styled from 'styled-components';
 
 const axios = require('axios');
@@ -24,6 +24,7 @@ const App = () => {
     <MainContainer>
       <Header />
       <Users users={userList} />
+      <Form />
     </MainContainer>
   )
 }
