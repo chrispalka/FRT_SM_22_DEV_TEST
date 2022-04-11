@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from 'react-select'
 import styled from 'styled-components';
 
@@ -96,6 +96,35 @@ const CheckBoxContainer = styled.div`
     align-items: center;
   justify-content: center;
   }
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0.0625rem solid #D0D0D0;
+    border-radius: 0;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    opacity: 0;
+    background-color: #66C4AB;
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+    transition: opacity 0.5s;
+    opacity: 5;
+  }
+
 `
 const SendInfoButtonContainer = styled.div`
   display: flex;
@@ -158,72 +187,86 @@ const customStyles = {
   }),
 }
 
-const Form = () => (
-  <FormContainer>
-    <FormFlexContainer>
-      <HeadingContainer>
-        <FormHeaderText>
-          We Are Looking Forward To Working With You
-        </FormHeaderText>
-        <FormBodyText>
-          Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr,
-          sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore
-          magna aliquyam erat, sed diam
-          voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum.
-          Stet clita kasd gubergren, no sea
-          takimata sanctus est.
-        </FormBodyText>
-      </HeadingContainer>
-      <FormSubmitContainer>
-        <FormGrid>
-          <input type="text" placeholder='First Name' />
-          <input type="text" placeholder='Last Name' />
-          <input type="text" placeholder='Company Name' />
-          <input type="text" placeholder='Email' />
-          <input type="text" placeholder='Phone' />
-          <Select
-            styles={customStyles}
-            options={options}
-            placeholder={'Industry'}
-            components={{
-              IndicatorSeparator: () => null
-            }}
-          />
-        </FormGrid>
-        <SelectContainer>
-          <Select
-            styles={customStyles}
-            options={options}
-            placeholder={'Position Applying For'}
-            components={{
-              IndicatorSeparator: () => null
-            }}
-          />
-        </SelectContainer>
-        <CheckBoxContainer>
-          <div>
-            <p>Are you located in the United States?</p>
-          </div>
-          <div>
-            <p>Yes</p>
-            <input type="checkbox" />
-          </div>
-          <div>
-            <p>No</p>
-            <input type="checkbox" />
-          </div>
-        </CheckBoxContainer>
-        <SendInfoButtonContainer>
-          <SendInfoButton>
-            Send Info
-          </SendInfoButton>
-        </SendInfoButtonContainer>
-      </FormSubmitContainer>
-    </FormFlexContainer>
-  </FormContainer>
-);
+const Form = () => {
+  const [isYesChecked, setIsYesChecked] = useState(false);
+  const [isNoChecked, setIsNoChecked] = useState(false);
+
+  const handleOnClick = (check) => {
+    if (check === 'yes') {
+      setIsYesChecked(!isYesChecked);
+      setIsNoChecked(false)
+    } else if (check === 'no') {
+      setIsNoChecked(!isNoChecked)
+      setIsYesChecked(false);
+    }
+  }
+  return (
+    <FormContainer>
+      <FormFlexContainer>
+        <HeadingContainer>
+          <FormHeaderText>
+            We Are Looking Forward To Working With You
+          </FormHeaderText>
+          <FormBodyText>
+            Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr,
+            sed diam nonumy eirmod tempor
+            invidunt ut labore et dolore
+            magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam
+            et justo duo dolores et ea rebum.
+            Stet clita kasd gubergren, no sea
+            takimata sanctus est.
+          </FormBodyText>
+        </HeadingContainer>
+        <FormSubmitContainer>
+          <FormGrid>
+            <input type="text" placeholder='First Name' />
+            <input type="text" placeholder='Last Name' />
+            <input type="text" placeholder='Company Name' />
+            <input type="text" placeholder='Email' />
+            <input type="text" placeholder='Phone' />
+            <Select
+              styles={customStyles}
+              options={options}
+              placeholder={'Industry'}
+              components={{
+                IndicatorSeparator: () => null
+              }}
+            />
+          </FormGrid>
+          <SelectContainer>
+            <Select
+              styles={customStyles}
+              options={options}
+              placeholder={'Position Applying For'}
+              components={{
+                IndicatorSeparator: () => null
+              }}
+            />
+          </SelectContainer>
+          <CheckBoxContainer>
+            <div>
+              <p>Are you located in the United States?</p>
+            </div>
+            <div>
+              <p>Yes</p>
+              <input type="checkbox" className='checked' onChange={() => handleOnClick('yes')} checked={isYesChecked} />
+            </div>
+            <div>
+              <p>No</p>
+              <input type="checkbox" className='checked' onChange={() => handleOnClick('no')} checked={isNoChecked} />
+            </div>
+          </CheckBoxContainer>
+          <SendInfoButtonContainer>
+            <SendInfoButton>
+              Send Info
+            </SendInfoButton>
+          </SendInfoButtonContainer>
+        </FormSubmitContainer>
+      </FormFlexContainer>
+    </FormContainer>
+  )
+};
 
 export default Form;

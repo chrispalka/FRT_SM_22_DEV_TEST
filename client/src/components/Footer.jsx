@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 const FooterContainer = styled.div`
   position: relative;
@@ -9,6 +11,7 @@ const FooterContainer = styled.div`
 const NameContainer = styled.div`
   height: 10.9375rem;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   h2 {
@@ -16,6 +19,15 @@ const NameContainer = styled.div`
     font-family: 'Libre Franklin', sans-serif;
     font-weight: 600;
     font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .fa-linkedin {
+    cursor: pointer;
+    color: gray;
+    height: 2.5rem;
+  }
+  .fa-linkedin:hover {
+    color: #0A66C2;
   }
 `;
 
@@ -50,6 +62,7 @@ const Footer = () => (
   <FooterContainer>
     <NameContainer>
       <h2>Applicant's Name</h2>
+      <FontAwesomeIcon icon={faLinkedin} />
     </NameContainer>
     <TradeMarkContainer>
       <p className='trademark'>
