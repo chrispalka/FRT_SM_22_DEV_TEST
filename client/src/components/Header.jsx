@@ -11,7 +11,7 @@ const TopHeaderLogo = styled.div`
   position: sticky;
   top: 0;
   background-color: #fff;
-  box-shadow: 0px 3px 18px #00000014;
+  box-shadow: 0rem 0.1875rem 1.125rem #00000014;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@ const BackgroundHeaderContainer = styled.div`
 
 const BackgroundHeaderText = styled.h3`
   font-family: 'Fira Sans', sans-serif;
-  font-size: 64px;
+  font-size: 4rem;
   color: white;
 `;
 
@@ -45,7 +45,7 @@ const BodyHeaderContainer = styled.div`
 
 const BodyHeaderText = styled.h2`
   font-family: 'Fira Sans', sans-serif;
-  font-size: 48px;
+  font-size: 3rem;
   color: #1A1353;
 `;
 
@@ -56,7 +56,7 @@ const BodyHeaderSubTextContainer = styled.div`
 
 const BodyHeaderSubText = styled.h1`
   color: #2A474D;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
 `;
@@ -84,8 +84,8 @@ const ContactButtonContainer = styled.div`
 `
 
 const ContactButton = styled.button`
-  height: 55px;
-  width: 140px;
+  height: 3.4375rem;
+  width: 8.75rem;
   background-color: #66C4AB;
   border-width: 0;
   font-family: 'Libre Franklin', sans-serif;
@@ -98,6 +98,15 @@ const ContactButton = styled.button`
     background-color: #52a891;
   }
 `;
+
+// .flagged-check:checked {
+//   background-color: #2C9DDB !important;
+// }
+
+// .flagged-junk:focus {
+//   box-shadow: none !important;
+// }
+
 
 
 const Header = () => (

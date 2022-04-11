@@ -12,8 +12,8 @@ const UsersGridContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 256px);
-  gap: 20px;
+  grid-template-rows: repeat(3, 16rem);
+  gap: 1.25rem;
 `
 
 const Users = ({ users }) => {

@@ -6,8 +6,8 @@ const UserContainer = styled.div`
   position: relative;
   flex-direction: column;
   align-items: center;
-  height: 256px;
-  width: 400px;
+  height: 16rem;
+  width: 25rem;
   text-align: center;
 
   opacity: 1;
@@ -16,44 +16,44 @@ const UserContainer = styled.div`
     margin-top: 0.5rem;
     color: #00AECF;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
   }
 `
 const AvatarContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: 64px;
+  height: 4rem;
   width: 100%;
 `;
 
 const ImageContainer = styled.div`
   border-radius: 50%;
   z-index: 20;
-  width: 128px;
-  height: 128px;
+  width: 8rem;
+  height: 8rem;
   overflow: hidden;
 `
 const InfoContainer = styled.div`
   height: 100%;
   background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 24px #00000014;
-  border-radius: 8px;
+  box-shadow: 0rem 0.1875rem 1.5rem #00000014;
+  border-radius: 0.5rem;
   width: 100%;
   font-family: 'Libre Franklin', sans-serif;
   .name {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
   }
   .location {
     font-weight 400;
-    font-size: 16px;
+    font-size: 1rem;
   }
   p {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
   }
   .name-location-header {
     margin-top: 4.4rem;
