@@ -5,7 +5,7 @@ import { User } from '../layout';
 const UsersContainer = styled.div`
   display: flex;
   justify-content: center;
-  `;
+`;
 
 const UsersGridContainer = styled.div`
   display: grid;
@@ -13,11 +13,10 @@ const UsersGridContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 16rem);
   gap: 1.25rem;
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     display: block;
   }
-
-`
+`;
 
 const Users = ({ users }) => {
   return (
@@ -41,7 +40,7 @@ const Users = ({ users }) => {
         ))}
       </UsersGridContainer>
     </UsersContainer>
-  )
-}
+  );
+};
 
 export default Users;

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../assets/Images/logo.png'
-
+import logo from '../assets/Images/logo.png';
 
 const HeaderContainer = styled.div`
   height: 44rem;
@@ -23,7 +22,7 @@ const TopHeaderLogo = styled.div`
 
 const BackgroundHeaderContainer = styled.div`
   height: 16rem;
-  background-color: #1A1353;
+  background-color: #1a1353;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,47 +45,46 @@ const BodyHeaderContainer = styled.div`
 const BodyHeaderText = styled.h2`
   font-family: 'Fira Sans', sans-serif;
   font-size: 3rem;
-  color: #1A1353;
+  color: #1a1353;
 `;
 
 const BodyHeaderSubTextContainer = styled.div`
   margin-left: 30rem;
   margin-right: 30rem;
-`
+`;
 
 const BodyHeaderSubText = styled.h1`
-  color: #2A474D;
+  color: #2a474d;
   font-size: 1.125rem;
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
 `;
 
-const LogoContainer = styled.div`
-`;
+const LogoContainer = styled.div``;
 
 const ContactContainer = styled.div`
-display: flex;
-justify-content: space-evenly;
-flex-flow: row;
-align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row;
+  align-items: center;
 `;
 
 const TeleContainer = styled.div`
-h1 {
-  color: #1A1353;
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-}
-`
+  h1 {
+    color: #1a1353;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+`;
 const ContactButtonContainer = styled.div`
   margin-left: 1.5rem;
-`
+`;
 
 const ContactButton = styled.button`
   height: 3.4375rem;
   width: 8.75rem;
-  background-color: #66C4AB;
+  background-color: #66c4ab;
   border-width: 0;
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 600;
@@ -99,13 +97,12 @@ const ContactButton = styled.button`
   }
 `;
 
-
 const Header = () => (
   <HeaderContainer>
     <TopHeaderLogo>
       <LogoContainer>
         <a href='https://www.fieldroutes.com/' target={'_blank'}>
-          <img src={logo} height="32" />
+          <img src={logo} height='32' />
         </a>
       </LogoContainer>
       <ContactContainer>
@@ -113,9 +110,7 @@ const Header = () => (
           <h1>(888) 888-8888</h1>
         </TeleContainer>
         <ContactButtonContainer>
-          <ContactButton>
-            Contact Us
-          </ContactButton>
+          <ContactButton>Contact Us</ContactButton>
         </ContactButtonContainer>
       </ContactContainer>
     </TopHeaderLogo>
@@ -125,20 +120,20 @@ const Header = () => (
       </BackgroundHeaderText>
     </BackgroundHeaderContainer>
     <BodyHeaderContainer>
-      <BodyHeaderText>
-        This is body content, specifically an h2
-      </BodyHeaderText>
+      <BodyHeaderText>This is body content, specifically an h2</BodyHeaderText>
       <BodyHeaderSubTextContainer>
         <BodyHeaderSubText>
-          FieldRoutes is a Cloud-based and mobile SaaS provider for field service businesses.
-          The platform automates all aspects of field service operations for enterprise and
-          small business customers that span office management, advanced route optimization,
-          payment processing, digital sales, marketing, and customer acquisition solutions that
-          accelerate growth, streamline operations, increase customer retention, and maximize revenue.
+          FieldRoutes is a Cloud-based and mobile SaaS provider for field
+          service businesses. The platform automates all aspects of field
+          service operations for enterprise and small business customers that
+          span office management, advanced route optimization, payment
+          processing, digital sales, marketing, and customer acquisition
+          solutions that accelerate growth, streamline operations, increase
+          customer retention, and maximize revenue.
         </BodyHeaderSubText>
       </BodyHeaderSubTextContainer>
     </BodyHeaderContainer>
   </HeaderContainer>
-)
+);
 
 export default Header;

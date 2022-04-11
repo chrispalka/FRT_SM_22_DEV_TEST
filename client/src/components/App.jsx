@@ -16,16 +16,15 @@ const MainContainer = styled.div`
   margin-right: auto;
 `;
 
-
 const App = () => {
-  const [userList, setUserList] = useState([])
+  const [userList, setUserList] = useState([]);
   useEffect(() => {
     axios('/users')
       .then((response) => {
-        setUserList(response.data.results)
+        setUserList(response.data.results);
       })
-      .catch((err) => console.log(err))
-  }, [])
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
       <Global />
@@ -36,7 +35,7 @@ const App = () => {
         <Footer />
       </MainContainer>
     </>
-  )
+  );
 };
 
 export default App;

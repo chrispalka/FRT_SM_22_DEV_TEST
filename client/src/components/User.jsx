@@ -13,17 +13,17 @@ const UserContainer = styled.div`
   text-align: center;
 
   opacity: 1;
-  color: #2A474D;
+  color: #2a474d;
   .learn-more {
     margin-top: 0.5rem;
-    color: #00AECF;
+    color: #00aecf;
     font-weight: 600;
     font-size: 1rem;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: 600;
     font-size: 1rem;
   }
-`
+`;
 const AvatarContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@ const ImageContainer = styled.div`
   width: 8rem;
   height: 8rem;
   overflow: hidden;
-`
+`;
 const InfoContainer = styled.div`
   height: 100%;
   background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -71,7 +71,7 @@ const InfoContainer = styled.div`
       color: #fff;
     }
   }
-`
+`;
 
 const ModalWrapper = styled.div`
   position: fixed;
@@ -87,9 +87,20 @@ const ModalWrapper = styled.div`
   z-index: 100;
   overflow-x: hidden;
   background-color: rgba(31, 32, 41, 0.75);
-`
+`;
 
-const User = ({ firstName, lastName, age, city, streetNumber, streetName, avatar, country, phone, email }) => {
+const User = ({
+  firstName,
+  lastName,
+  age,
+  city,
+  streetNumber,
+  streetName,
+  avatar,
+  country,
+  phone,
+  email,
+}) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -110,9 +121,7 @@ const User = ({ firstName, lastName, age, city, streetNumber, streetName, avatar
           />
         </ModalWrapper>
       )}
-      <UserContainer
-        onClick={() => setShowModal(true)}
-      >
+      <UserContainer onClick={() => setShowModal(true)}>
         <AvatarContainer>
           <ImageContainer>
             <img src={avatar}></img>
@@ -132,7 +141,7 @@ const User = ({ firstName, lastName, age, city, streetNumber, streetName, avatar
         </InfoContainer>
       </UserContainer>
     </>
-  )
+  );
 };
 
 export default User;

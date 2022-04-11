@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
-
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 const UserContainer = styled.div`
   display: flex;
@@ -18,17 +17,17 @@ const UserContainer = styled.div`
   text-align: center;
 
   opacity: 100%;
-  color: #2A474D;
+  color: #2a474d;
   .learn-more {
     margin-top: 0.5rem;
-    color: #00AECF;
+    color: #00aecf;
     font-weight: 600;
     font-size: 1rem;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: 600;
     font-size: 1rem;
   }
-`
+`;
 const AvatarContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -42,7 +41,7 @@ const ImageContainer = styled.div`
   width: 8rem;
   height: 8rem;
   overflow: hidden;
-`
+`;
 const InfoContainer = styled.div`
   display: flex;
   flex-flow: column;
@@ -86,7 +85,7 @@ const InfoContainer = styled.div`
     margin-bottom: 1rem;
   }
 }
-`
+`;
 
 const CloseIconContainer = styled.div`
   height: 1.5687rem;
@@ -98,7 +97,7 @@ const CloseIconContainer = styled.div`
   top: 17%;
   box-shadow: 0px 0px 3px #00000029;
   .fa-circle-xmark {
-    color: #BBBBBB;
+    color: #bbbbbb;
     z-index: 999;
     height: 1.7687rem;
     width: 1.7687rem;
@@ -108,13 +107,23 @@ const CloseIconContainer = styled.div`
     transform: translate(-50%, -50%);
   }
   .fa-circle-xmark:hover {
-    color: #00AECF;
+    color: #00aecf;
     cursor: pointer;
   }
-
 `;
 
-const Modal = ({ firstName, lastName, age, city, streetName, streetNumber, avatar, country, email, phone }) => {
+const Modal = ({
+  firstName,
+  lastName,
+  age,
+  city,
+  streetName,
+  streetNumber,
+  avatar,
+  country,
+  email,
+  phone,
+}) => {
   return (
     <UserContainer>
       <CloseIconContainer>
@@ -130,25 +139,19 @@ const Modal = ({ firstName, lastName, age, city, streetName, streetNumber, avata
           {firstName} {lastName}
         </div>
         <div className='details'>
-          <div className='age'>
-            Age: {age}
-          </div>
+          <div className='age'>Age: {age}</div>
           <div className='street'>
             {streetNumber}, {streetName}
           </div>
           <div className='city-country'>
             {city}, {country}
           </div>
-          <div className='phone'>
-            {phone}
-          </div>
-          <div className='email'>
-            {email}
-          </div>
+          <div className='phone'>{phone}</div>
+          <div className='email'>{email}</div>
         </div>
       </InfoContainer>
     </UserContainer>
-  )
-}
+  );
+};
 
 export default Modal;
