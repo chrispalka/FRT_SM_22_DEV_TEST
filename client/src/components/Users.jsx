@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import { User } from '../layout';
 
 const UsersContainer = styled.div`
   display: flex;
   justify-content: center;
-`;
+  `;
 
 const UsersGridContainer = styled.div`
   display: grid;
@@ -14,6 +13,10 @@ const UsersGridContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 16rem);
   gap: 1.25rem;
+  @media (max-width:1000px) {
+    display: block;
+  }
+
 `
 
 const Users = ({ users }) => {
@@ -29,8 +32,10 @@ const Users = ({ users }) => {
             city={user.location.city}
             country={user.location.country}
             age={user.dob.age}
+            phone={user.phone}
             email={user.email}
-            street={user.location.street.number, user.location.street.name}
+            streetName={user.location.street.name}
+            streetNumber={user.location.street.number}
             avatar={user.picture.large}
           />
         ))}

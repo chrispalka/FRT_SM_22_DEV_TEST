@@ -99,15 +99,6 @@ const ContactButton = styled.button`
   }
 `;
 
-// .flagged-check:checked {
-//   background-color: #2C9DDB !important;
-// }
-
-// .flagged-junk:focus {
-//   box-shadow: none !important;
-// }
-
-
 
 const Header = () => (
   <HeaderContainer>

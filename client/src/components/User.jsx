@@ -1,5 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+
+import { Modal } from '../layout';
 
 const UserContainer = styled.div`
   display: flex;
@@ -70,26 +72,67 @@ const InfoContainer = styled.div`
     }
   }
 `
-const User = ({ firstName, lastName, age, city, street, avatar, country, email }) => (
-  <UserContainer>
-    <AvatarContainer>
-      <ImageContainer>
-        <img src={avatar}></img>
-      </ImageContainer>
-    </AvatarContainer>
-    <InfoContainer>
-      <div className='name-location-header'>
-        <div className='name'>
-          {firstName} {lastName}
-        </div>
-        <p>|</p>
-        <div className='location'>
-          {city}, {country}
-        </div>
-      </div>
-      <div className='learn-more'>Learn More</div>
-    </InfoContainer>
-  </UserContainer>
-);
+
+const ModalWrapper = styled.div`
+  position: fixed;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  overflow-x: hidden;
+  background-color: rgba(31, 32, 41, 0.75);
+`
+
+const User = ({ firstName, lastName, age, city, streetNumber, streetName, avatar, country, phone, email }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <>
+      {showModal && (
+        <ModalWrapper onClick={() => setShowModal(false)}>
+          <Modal
+            firstName={firstName}
+            lastName={lastName}
+            city={city}
+            country={country}
+            age={age}
+            phone={phone}
+            email={email}
+            streetName={streetName}
+            streetNumber={streetNumber}
+            avatar={avatar}
+          />
+        </ModalWrapper>
+      )}
+      <UserContainer
+        onClick={() => setShowModal(true)}
+      >
+        <AvatarContainer>
+          <ImageContainer>
+            <img src={avatar}></img>
+          </ImageContainer>
+        </AvatarContainer>
+        <InfoContainer>
+          <div className='name-location-header'>
+            <div className='name'>
+              {firstName} {lastName}
+            </div>
+            <p>|</p>
+            <div className='location'>
+              {city}, {country}
+            </div>
+          </div>
+          <div className='learn-more'>Learn More</div>
+        </InfoContainer>
+      </UserContainer>
+    </>
+  )
+};
 
 export default User;
